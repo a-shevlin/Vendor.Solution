@@ -6,9 +6,14 @@ using Vendor;
 
 namespace Vendor.Tests
 {
+  
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     // Test methods go here
     [TestMethod]
     public void Order_CreateInstanceOfOrder_Order()
@@ -22,15 +27,7 @@ namespace Vendor.Tests
     {
       List<Order> empty = new List<Order> {};
       List<Order> test = Order.GetList();
-      foreach (var item in empty)
-      {
-        Console.WriteLine(item);
-      }
-      foreach (var item in test)
-      {
-        Console.WriteLine(item);
-      }
-      Assert.AreEqual(test, empty);
+      CollectionAssert.AreEqual(test, empty);
     }
   }
 }
