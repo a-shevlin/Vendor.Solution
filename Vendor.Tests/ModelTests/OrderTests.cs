@@ -37,5 +37,16 @@ namespace Vendor.Tests
       List<Order> test = Order.GetList();
       Assert.AreEqual(Order.FindOrder(1), test[0]);
     }
+
+    [TestMethod]
+    public void RemoveOrder_DeleteOrderFromId_List()
+    {
+      Order newOrder = new Order("test", "test", 0, "date");
+      Order newTwo = new Order("test", "test", 0, "date");
+      List<Order> test = Order.GetList();
+      List<Order> newList = new List<Order> {};
+      Order.RemoveOrder(1);
+      Assert.AreEqual(1, test.Count);
+    }
   }
 }
