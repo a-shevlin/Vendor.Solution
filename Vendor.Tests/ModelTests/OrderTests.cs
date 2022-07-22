@@ -29,5 +29,13 @@ namespace Vendor.Tests
       List<Order> test = Order.GetList();
       CollectionAssert.AreEqual(test, empty);
     }
+
+    [TestMethod]
+    public void FindOrder_FindOrderById_Order()
+    {
+      Order newOrder = new Order("test", "test", 0, "date");
+      List<Order> test = Order.GetList();
+      Assert.AreEqual(Order.FindOrder(1), test[0]);
+    }
   }
 }
