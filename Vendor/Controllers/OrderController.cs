@@ -6,10 +6,10 @@ namespace Vendor.Controllers
 {
   public class OrderController : Controller
   {
-    [HttpGet("/play")]
-    public ActionResult Index()
-    {
-      return View();
-    }
+    // [HttpGet("")]
+    // public ActionResult Index()
+    // {
+    //   return View();
+    // }
   }
 }
