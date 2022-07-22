@@ -31,5 +31,11 @@ namespace Vendor.Models
     {
       _instances.Clear();
     }
+
+    public static Order FindOrder(int id)
+    {
+      return _instances.Find(order => order.Id == id);
+    }
+
   }
 }
