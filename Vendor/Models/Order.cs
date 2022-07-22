@@ -37,5 +37,10 @@ namespace Vendor.Models
       return _instances.Find(order => order.Id == id);
     }
 
+    public static void RemoveOrder(int id)
+    {
+      Order remove = Order.FindOrder(id);
+      _instances.Remove(remove);
+    }
   }
 }
