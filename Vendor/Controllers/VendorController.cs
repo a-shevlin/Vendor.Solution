@@ -26,5 +26,16 @@ namespace Vendor.Controllers
       MakeVendor make = new MakeVendor(name, desc);
       return RedirectToAction("Index");
     }
+
+    [HttpPost("/vendor/{Id}")]
+    public ActionResult Show(int Id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      MakeVendor findVendor = MakeVendor.FindVendor(Id);
+      List<Order> vendorOrders = findVendor.Orders;
+      model.Add("vendor", findVendor);
+      model.Add("orders", vendorOrders);
+      return View(model);
+    }
   }
 }
