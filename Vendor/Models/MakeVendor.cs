@@ -9,15 +9,15 @@ namespace Vendor.Models
     public string Description { get; set; }
     public List<Order> Orders { get; set; }
     public int Id { get; }
-    private static List<MakeVendor> _instance = new List<MakeVendor> {};
+    private static List<MakeVendor> _instances = new List<MakeVendor> {};
 
     public MakeVendor(string name, string description)
     {
       Name = name;
       Description = description;
       Orders = new List<Order> {};
-      _instance.Add(this);
-      Id = _instance.Count;
+      _instances.Add(this);
+      Id = _instances.Count;
     }
 
     public void AddOrder(Order order)
@@ -27,7 +27,23 @@ namespace Vendor.Models
 
     public static void ClearAll()
     {
-      _instance.Clear();
+      _instances.Clear();
+    }
+
+    public static List<MakeVendor> GetList()
+    {
+      return _instances;
+    }
+
+    public static MakeVendor FindVendor(int id)
+    {
+      return _instances.Find(vendor => vendor.Id == id);
+    }
+
+    public static void RemoveVendor(int id)
+    {
+      MakeVendor remove = MakeVendor.FindVendor(id);
+      _instances.Remove(remove);
     }
   }
 }
