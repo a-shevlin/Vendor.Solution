@@ -19,5 +19,15 @@ namespace Vendor.Models
       _instance.Add(this);
       Id = _instance.Count;
     }
+
+    public void AddOrder(Order order)
+    {
+      Orders.Add(order);
+    }
+
+    public static void ClearAll()
+    {
+      _instance.Clear();
+    }
   }
 }
