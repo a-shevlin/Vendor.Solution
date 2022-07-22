@@ -8,5 +8,25 @@
   <h5>Description: @Model["vendor"].Description</h5>
 </div>
 <div>
-  <h4>Order Log</h4>
+  <h4>Order Log:</h4>
+  @if (@Model["vendor"].Orders.Count == 0)
+  {
+    <p>This vendor has no previous orders.</p>
+  }
+  <ul>
+    @foreach (Order order in @Model["orders"])
+    {
+      <li>
+        <a href='/vendor/@Model["vendor"].Id/order/@order.Id'>@order.Date : @order.Title</a>
+      </li>
+    }
+  </ul>
+  <p><a href='/vendor/@Model["vendor"].Id/order/new'>Add a new order!</a></p>
+  <p><a href='/vendor'>Return to Vendor List!</a></p>
+  <p><a href='/'>Return to Main Page!</a></p>
+  <br>
+  <form action='/vendor/@Model["vendor"].Id' method="post">
+    <h5>Warning! This action can not be undone!</h5>
+    <button type="submit" class="btn">Delete this Vendor!</button>
+  </form>
 </div>
