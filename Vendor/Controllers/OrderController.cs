@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
 using Vendor.Models;
 using System;
 
@@ -12,7 +11,5 @@ namespace Vendor.Controllers
     {
       return View();
     }
-    }
-    {
   }
 }
