@@ -29,7 +29,7 @@
 
 ## Description
 
-_This web app allows the user to track vendors that purchase goods from Pierre's bakery and orders that belong to those vendors. This is accomplished using `Vendor` and `Order` classes and controlled from `TrackController`._
+_This web app allows the user to track vendors that purchase goods from Pierre's bakery and orders that belong to those vendors. This is accomplished using `Vendor` and `Order` classes and controlled from `OrderController` and `VendorController`._
 
 ---
 ## Setup/Installation Requirements
