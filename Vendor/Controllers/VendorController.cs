@@ -27,7 +27,7 @@ namespace Vendor.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/vendor/{Id}")]
+    [HttpGet("/vendor/{Id}")]
     public ActionResult Show(int Id)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
@@ -35,6 +35,7 @@ namespace Vendor.Controllers
       List<Order> vendorOrders = findVendor.Orders;
       model.Add("vendor", findVendor);
       model.Add("orders", vendorOrders);
+      Console.WriteLine();
       return View(model);
     }
   }
