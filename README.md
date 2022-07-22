@@ -1,8 +1,8 @@
-# {C# Application Name}
+# Pierre's Vendor and Order Tracker
 
 #### By _**Alex Shevlin**_  
 
-#### _{Brief description of application}_  
+#### _A web app that allows a user to track vendor purchases._  
 
 ---
 
@@ -13,7 +13,8 @@
 [Technology Requirements](#technology-requirements)  
 [Setup and Installation](#setupinstallation-requirements)  
 [Known Bugs](#known-bugs)  
-[License](#license)**
+[License](#license)  
+[Known Bugs](#known-bugs)**
 
 ---
 
@@ -28,22 +29,22 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_This web app allows the user to track vendors that purchase goods from Pierre's bakery and orders that belong to those vendors. This is accomplished using `Vendor` and `Order` classes and controlled from `TrackController`._
 
 ---
 ## Setup/Installation Requirements
 
 * Install *`Microsoft .NET SDK`*
 * Place files in a folder named `ProjectName.Solution`
-    <pre>ProjectName.Solution
-    ├── ProjectName
-    └── ProjectName.Tests</pre>
+    <pre>Vendor.Solution
+    ├── Vendor
+    └── Vendor.Tests</pre>
 <details>
 <summary><strong>To Run</strong></summary>
 Navigate to  
-   <pre>ProjectName.Solution
-   ├── <strong>ProjectName</strong>
-   └── ProjectName.Tests</pre>
+   <pre>Vendor.Solution
+   ├── <strong>Vendor</strong>
+   └── Vendor.Tests</pre>
 
 Run ```$ dotnet run``` in the console
 </details>
