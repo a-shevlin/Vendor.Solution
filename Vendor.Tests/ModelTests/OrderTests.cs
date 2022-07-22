@@ -39,7 +39,7 @@ namespace Vendor.Tests
     }
 
     [TestMethod]
-    public void RemoveOrder_DeleteOrderFromId_List()
+    public void RemoveOrder_DeleteOrderFromList_List()
     {
       Order newOrder = new Order("test", "test", 0, "date");
       Order newTwo = new Order("test", "test", 0, "date");
