@@ -1,8 +1,8 @@
 using System;
 
-namespace ProjectName
+namespace Vendors.Models
 {
-  public class ClassName
+  public class CheckVendor
   {
     // properties, constructors, methods, etc. go here
   }

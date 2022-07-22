@@ -1,10 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjectName.Models;
+using Vendor.Models;
 using System;
 
-namespace ProjectName.Controllers
+namespace Vendor.Controllers
 {
-  public class PlayController : Controller
+  public class OrderController : Controller
   {
     [HttpGet("/play")]
     public ActionResult Index()
