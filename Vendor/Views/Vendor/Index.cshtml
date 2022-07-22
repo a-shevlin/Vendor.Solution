@@ -13,6 +13,7 @@
   @foreach (MakeVendor vendor in Model)
   {
     <li>
+      <p>@vendor.Id</p>
       <a href="/vendor/@vendor.Id">@vendor.Name</a>
     </li>
   }
