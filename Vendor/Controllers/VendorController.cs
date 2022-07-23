@@ -44,5 +44,18 @@ namespace Vendor.Controllers
       MakeVendor.RemoveVendor(id);
       return View();
     }
+
+    // [HttpGet("/vendor/{vendorId}/order}")]
+    // public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
+    // {
+    // Dictionary<string, object> model = new Dictionary<string, object> {};
+    // MakeVendor foundVendor = MakeVendor.FindVendor(vendorId);
+    // Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+    // foundVendor.AddOrder(newOrder);
+    // List<Order> vendorOrder = foundVendor.Orders;
+    // model.Add("orders", vendorOrder);
+    // model.Add("vendor", foundVendor);
+    // return View("Show", model);
+    // }
   }
 }

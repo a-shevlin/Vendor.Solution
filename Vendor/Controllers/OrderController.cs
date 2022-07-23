@@ -6,10 +6,11 @@ namespace Vendor.Controllers
 {
   public class OrderController : Controller
   {
-    // [HttpGet("")]
-    // public ActionResult Index()
-    // {
-    //   return View();
-    // }
+    [HttpGet("/vendor/{vendorId}/order/new")]
+    public ActionResult New(int vendorId)
+    {
+      MakeVendor vendor = MakeVendor.FindVendor(vendorId);
+      return View(vendor);
+    }
   }
 }
