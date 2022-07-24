@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+@using Vendor.Models;
+
+<div class="header">
+  <h1>Order Details</h1>
+</div>
+<div>
+  <h2>@Model["order"].Title</h2>
+  <p>Due Date: @Model["order"].Date</p>
+  <p>Price: $@Model["order"].Price</p>
+  <h4>Description: @Model["order"].Description</h4>
+
+  <a href='/vendor/@Model["vendor"].Id' class="btn-md">Return to this vendor.</a>
+  <br>
+  <a href="/vendor" class="btn-md">Return to vendor list.</a>
+</div>
