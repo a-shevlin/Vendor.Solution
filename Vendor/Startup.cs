@@ -25,9 +25,9 @@ namespace Vendor
 
     public void Configure(IApplicationBuilder app)
     {
-      app.UseStaticFiles();
       app.UseDeveloperExceptionPage();
       app.UseRouting();
+      app.UseStaticFiles();
 
       app.UseEndpoints(routes =>
       {
