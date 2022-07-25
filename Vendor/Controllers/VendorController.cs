@@ -45,17 +45,17 @@ namespace Vendor.Controllers
       return View();
     }
 
-    [HttpGet("/vendor/{vendorId}/order}")]
+    [HttpPost("/vendor/{vendorId}/order}")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
     {
-    Dictionary<string, object> model = new Dictionary<string, object> {};
-    MakeVendor foundVendor = MakeVendor.FindVendor(vendorId);
-    Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
-    foundVendor.AddOrder(newOrder);
-    List<Order> vendorOrder = foundVendor.Orders;
-    model.Add("orders", vendorOrder);
-    model.Add("vendor", foundVendor);
-    return View("Show", model);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      MakeVendor findVendor = MakeVendor.FindVendor(vendorId);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+      findVendor.AddOrder(newOrder);
+      List<Order> vendorOrder = findVendor.Orders;
+      model.Add("orders", vendorOrder);
+      model.Add("vendor", findVendor);
+      return View("Show", model);
     }
   }
 }

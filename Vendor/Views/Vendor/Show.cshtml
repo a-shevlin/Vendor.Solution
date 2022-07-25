@@ -14,12 +14,12 @@
     <p>This vendor has no previous orders.</p>
   }
   <ul>
-    @foreach (Order order in @Model["orders"])
+    @* @foreach (Order order in @Model["orders"])
     {
       <li>
         <a href='/vendor/@Model["vendor"].Id/order/@order.Id'>@order.Date : @order.Title</a>
       </li>
-    }
+    } *@
   </ul>
   <p><a href='/vendor/@Model["vendor"].Id/order/new'>Add a new order!</a></p>
   <p><a href='/vendor'>Return to Vendor List!</a></p>

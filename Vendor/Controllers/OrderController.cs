@@ -14,6 +14,13 @@ namespace Vendor.Controllers
       return View(vendor);
     }
 
+    [HttpPost("/vendor/{vendorId}/order/{orderId}")]
+    public ActionResult Create(string title, string description, int price, string date)
+    {
+      Order newOrder = new Order(title, description, price, date);
+      return RedirectToAction("Show");
+    }
+
     [HttpGet("/vendor/{vendorId}/order/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
@@ -23,13 +30,6 @@ namespace Vendor.Controllers
       model.Add("order", order);
       model.Add("vendor", vendor);
       return View(model);
-    }
-
-    [HttpPost("/vendor/{vendorId}order/{orderId}")]
-    public ActionResult Create(string title, string description, int price, string date)
-    {
-      Order newOrder = new Order(title, description, price, date);
-      return RedirectToAction("Show");
     }
   }
 }

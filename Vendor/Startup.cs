@@ -25,7 +25,6 @@ namespace Vendor
 
     public void Configure(IApplicationBuilder app)
     {
-      app.UseStaticFiles();
       app.UseDeveloperExceptionPage();
       app.UseRouting();
 
@@ -33,7 +32,7 @@ namespace Vendor
       {
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
       });
-
+      app.UseStaticFiles();
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("Hello World!");
