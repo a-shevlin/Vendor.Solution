@@ -3,11 +3,12 @@
 }
 @using Vendor.Models;
 
-<div class="header">
-  <h1>@Model["vendor"].Name Orders.</h1>
-  <h5>Description: @Model["vendor"].Description</h5>
+<div class="jumbotron">
+  <h1 class="display-5">@Model["vendor"].Name's Orders.</h1>
+  <hr>
+  <h5 class="lead">Description: @Model["vendor"].Description</h5>
 </div>
-<div>
+<div class="container">
   <h4>Order Log:</h4>
   @if (@Model["vendor"].Orders.Count == 0)
   {
@@ -21,12 +22,15 @@
       </li>
     }
   </ul>
-  <p><a href='/vendor/@Model["vendor"].Id/order/new'>Add a new order!</a></p>
-  <p><a href='/vendor'>Return to Vendor List!</a></p>
-  <p><a href='/'>Return to Main Page!</a></p>
+  <a href='/vendor/@Model["vendor"].Id/order/new' id="btn-add" class="btn-link">Add a new order!</a>
+  <br>
+  <br>
+  <a href='/' class="btn-link">Return to Main Page!</a>
+  <a href='/vendor' class="btn-link">Return to Vendor List!</a>
+  <br>
   <br>
   <form action='/vendor/@Model["vendor"].Id' method="post">
+    <button type="submit" id="btn-del"class="btn-md">Delete this Vendor!</button>
     <h5>Warning! This action can not be undone!</h5>
-    <button type="submit" class="btn">Delete this Vendor!</button>
   </form>
 </div>

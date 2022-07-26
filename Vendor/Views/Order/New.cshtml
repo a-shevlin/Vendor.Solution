@@ -1,10 +1,10 @@
 @{
   Layout = "_Layout";
 }
-<div class="header">
+<div class="jumbotron">
   <h1>Add Order</h1>
 </div>
-<div>
+<div class="container">
   <h2>Add a new order for @Model.Name</h2>
   <form action="/vendor/@Model.Id/order" method="post">
     <input id="id" name="id" type="hidden" value="Model.Id">
@@ -20,6 +20,6 @@
     <label for="date">Order Date:</label>
     <input id="date" name="date" type="date" required>
     <br>
-    <button type="submit" class="btn">Add Order</button>
+    <button type="submit" class="btn-md">Add Order</button>
   </form>
 </div>

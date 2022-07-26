@@ -1,0 +1,30 @@
+.header {
+  margin-bottom: 10px;
+}
+
+.btn-link {
+  background-color: lightgray;
+  margin-top: 20px;
+  padding: 3px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  color: black;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+.btn-link:visited {
+  color: black;
+}
+
+#btn-add {
+  margin-bottom: 100px;
+}
+
+#btn-del {
+  border-radius: 5px;
+  background-color: rgb(254, 177, 161);
+}

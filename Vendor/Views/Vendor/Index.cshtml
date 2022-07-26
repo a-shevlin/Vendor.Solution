@@ -2,21 +2,20 @@
   Layout = "_Layout";
 }
 @using Vendor.Models;
-<h1>this is index for vendor</h1>
+<div class="container">
+  <h1>Vendor List</h1>
 
-@if (@Model.Count == 0) 
-{
-  <h3>You don't have any vendors yet!</h3>
-}
-
-<ul>
-  @foreach (MakeVendor vendor in Model)
+  @if (@Model.Count == 0) 
   {
-    <li>
-      <p>@vendor.Id</p>
-      <a href="/vendor/@vendor.Id">@vendor.Name</a>
-    </li>
+    <h3>You don't have any vendors yet!</h3>
   }
-</ul>
 
-<a href="/vendor/new">Add a vendor</a>
+  <ul>
+    @foreach (MakeVendor vendor in Model)
+    {    
+      <p>@vendor.Id. <a href="/vendor/@vendor.Id">@vendor.Name</a></p>
+    }
+  </ul>
+
+  <a href="/vendor/new" class="btn-link">Add a vendor</a>
+</div>
