@@ -35,8 +35,10 @@ namespace Vendor.Tests
     {
       MakeVendor newVendor = new MakeVendor("name", "description");
       Order newOrder = new Order("test", "test", 0, "date");
+      List<Order> newList = new List<Order> {newOrder};
       newVendor.AddOrder(newOrder);
-      Assert.AreEqual(1, newVendor.Orders.Count);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(result, newList);
     }
 
     [TestMethod]
