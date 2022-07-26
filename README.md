@@ -66,8 +66,7 @@ This program was built using *`Microsoft .NET SDK 6.0.6`*, and may not be compat
 ---
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _Unable to add order to specific vendor page._
 
 ## License
 
