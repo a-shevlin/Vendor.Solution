@@ -21,9 +21,9 @@ namespace Vendor.Controllers
     }
 
     [HttpPost("/vendor")]
-    public ActionResult Index(string name, string desc)
+    public ActionResult Index(string name, string description)
     {
-      MakeVendor make = new MakeVendor(name, desc);
+      MakeVendor make = new MakeVendor(name, description);
       return RedirectToAction("Index");
     }
 
@@ -45,15 +45,26 @@ namespace Vendor.Controllers
       return View();
     }
 
-    [HttpPost("/vendor/{vendorId}/order")]
-    public ActionResult New(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
+    [HttpPost("/vendor/{id}/order")]
+    public ActionResult New(int id, string title, string description, int price, string date)
     {
       Dictionary<string, object> model = new Dictionary<string, object> {};
-      MakeVendor foundVendor = MakeVendor.FindVendor(vendorId);
-      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
-      foundVendor.AddOrder(newOrder);
-      List<Order> vendorOrder = foundVendor.Orders;
+      MakeVendor findVendor = MakeVendor.FindVendor(id);
+      Order newOrder = new Order(title, description, price, date);
+      findVendor.AddOrder(newOrder);
+      List<Order> vendorOrder = findVendor.Orders;
       model.Add("orders", vendorOrder);
+      model.Add("vendor", findVendor);
+      return View("Show", model);
+    }
+
+    [HttpGet("/vendor/{id}/order")]
+    public ActionResult Update(int id)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      MakeVendor foundVendor = MakeVendor.FindVendor(id);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
       return View("Show", model);
     }
