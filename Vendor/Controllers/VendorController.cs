@@ -45,7 +45,7 @@ namespace Vendor.Controllers
       return View();
     }
 
-    [HttpPost("/vendor/{id}/order")]
+    [HttpPost("/vendor/{id}/orders")]
     public ActionResult New(int id, string title, string description, int price, string date)
     {
       Dictionary<string, object> model = new Dictionary<string, object> {};
@@ -55,17 +55,6 @@ namespace Vendor.Controllers
       List<Order> vendorOrder = findVendor.Orders;
       model.Add("orders", vendorOrder);
       model.Add("vendor", findVendor);
-      return View("Show", model);
-    }
-
-    [HttpGet("/vendor/{id}/order")]
-    public ActionResult Update(int id)
-    {
-      Dictionary<string, object> model = new Dictionary<string, object>();
-      MakeVendor foundVendor = MakeVendor.FindVendor(id);
-      List<Order> vendorOrders = foundVendor.Orders;
-      model.Add("orders", vendorOrders);
-      model.Add("vendor", foundVendor);
       return View("Show", model);
     }
   }

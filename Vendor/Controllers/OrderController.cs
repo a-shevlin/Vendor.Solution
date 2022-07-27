@@ -7,21 +7,14 @@ namespace Vendor.Controllers
 {
   public class OrderController : Controller
   {
-    [HttpGet("/vendor/{vendorId}/order/new")]
+    [HttpGet("/vendor/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
       MakeVendor vendor = MakeVendor.FindVendor(vendorId);
       return View(vendor);
     }
 
-    [HttpPost("/vendor/{vendorId}/order/{orderId}")]
-    public ActionResult Create(string title, string description, int price, string date)
-    {
-      Order newOrder = new Order(title, description, price, date);
-      return RedirectToAction("Show");
-    }
-
-    [HttpGet("/vendor/{vendorId}/order/{orderId}")]
+    [HttpGet("/vendor/{vendorId}/orders/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
       Order order = Order.FindOrder(orderId);

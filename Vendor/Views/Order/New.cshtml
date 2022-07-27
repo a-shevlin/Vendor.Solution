@@ -6,7 +6,7 @@
 </div>
 <div class="container">
   <h2>Add a new order for @Model.Name</h2>
-  <form action="/vendor/@Model.Id/order" method="post">
+  <form action="/vendor/@Model.Id/orders" method="post">
     <input id="id" name="id" type="hidden" value="Model.Id">
     <label for="title">Order Title:</label>
     <input id="title" name="title" type="text" required>
